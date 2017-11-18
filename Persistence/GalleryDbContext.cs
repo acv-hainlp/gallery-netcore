@@ -1,3 +1,4 @@
+using gallery_netcore.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace gallery_netcore.Persistence
@@ -8,5 +9,8 @@ namespace gallery_netcore.Persistence
         {
             
         }
+
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Post> Posts { get; set; }
     }
 }
