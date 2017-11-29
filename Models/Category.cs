@@ -9,9 +9,9 @@ namespace gallery_netcore.Models
         public int Id { get; set; }
 
         [Required][StringLength(255)]
-        public string title { get; set; }
+        public string Title { get; set; }
         [StringLength(255)]
-        public string description { get; set; }
+        public string Description { get; set; }
 
         public ICollection<Post> Posts { get; set; }
 

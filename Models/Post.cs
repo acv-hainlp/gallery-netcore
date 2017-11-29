@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace gallery_netcore.Models
@@ -6,15 +7,15 @@ namespace gallery_netcore.Models
     {
         public int Id { get; set; }
         [Required]
-        public int timestamp { get; set; }
+        public DateTime CreateOn { get; set; }
         [Required][StringLength(255)]
-        public string title { get; set; }
+        public string Title { get; set; }
         [StringLength(255)]
-        public string description { get; set; }
-        public bool isActive { get; set; }
-        public string coverUrl { get; set; }
+        public string Description { get; set; }
+        public bool IsActive { get; set; }
+        public string CoverUrl { get; set; }
 
         public Category Category { get; set; }
-        public int CategoryId { get; set; }
+        public int CategoryId { get; set; } 
     }
 }

@@ -4,6 +4,7 @@ using AutoMapper;
 using gallery_netcore.Controllers.Resource;
 using gallery_netcore.Models;
 using gallery_netcore.Persistence;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +21,7 @@ namespace gallery_netcore.Controllers
         }
 
         [HttpGet("/api/categories")]
+        [Authorize]
         public async Task<IEnumerable<CategoryResource>> GetCategories()
         {
             var categories = await context.Categories.Include(c => c.Posts).ToListAsync();
